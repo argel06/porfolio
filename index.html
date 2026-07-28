@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Name — Technical &amp; Local SEO Specialist</title>
+<meta name="description" content="Technical SEO Specialist with 6+ years of agency experience helping businesses improve search visibility, organic traffic, and website performance." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#ffffff;
+    --bg-soft:#f5f8fc;
+    --bg-soft-2:#eef3fb;
+    --ink:#0d1b2a;
+    --ink-soft:#4b5a70;
+    --ink-faint:#8494a8;
+    --blue:#2158e0;
+    --blue-deep:#12308a;
+    --blue-bright:#3d7bff;
+    --blue-pale:#e8effc;
+    --blue-pale-2:#dbe6fb;
+    --line:#e3e9f2;
+    --success:#1a9d6f;
+    --radius-lg:22px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --shadow-sm:0 2px 10px rgba(13,27,42,0.05);
+    --shadow-md:0 10px 30px rgba(18,48,138,0.09);
+    --shadow-lg:0 24px 60px rgba(18,48,138,0.14);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk',system-ui,sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--ink);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  section{padding:112px 0;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--blue); background:var(--blue-pale); padding:7px 14px 7px 10px; border-radius:100px;
+    margin-bottom:20px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--blue); box-shadow:0 0 0 3px var(--blue-pale-2);}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px); line-height:1.15; margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft); font-size:17px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:15px;
+    padding:14px 24px; border-radius:100px; border:1px solid transparent;
+    cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:linear-gradient(135deg,var(--blue),var(--blue-deep)); color:#fff; box-shadow:var(--shadow-md);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg);}
+  .btn-ghost{ background:var(--white); color:var(--ink); border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--blue); color:var(--blue); transform:translateY(-2px);}
+  .btn-sm{padding:10px 18px; font-size:13.5px;}
+  .btn:focus-visible{outline:2px solid var(--blue); outline-offset:3px;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--maxw); margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk'; font-weight:700; font-size:17px;}
+  .logo-mark{
+    width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,var(--blue),var(--blue-deep));
+    display:flex; align-items:center; justify-content:center; color:#fff; font-size:13px; font-weight:700; letter-spacing:-0.02em;
+    box-shadow:0 4px 14px rgba(33,88,224,0.35);
+  }
+  .nav-links{display:flex; align-items:center; gap:30px; list-style:none;}
+  .nav-links a{font-size:14.5px; font-weight:500; color:var(--ink-soft); transition:color .2s ease; position:relative;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .nav-toggle svg{width:24px;height:24px;stroke:var(--ink);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 100px; position:relative; overflow:hidden;}
+  .hero::before{
+    content:''; position:absolute; top:-220px; right:-160px; width:640px; height:640px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(33,88,224,0.12), rgba(33,88,224,0) 65%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.02fr 0.98fr; gap:56px; align-items:center; position:relative; z-index:1;}
+  .hero h1{font-size:clamp(34px,4.6vw,54px); line-height:1.08; margin-bottom:22px;}
+  .hero h1 .accent{
+    background:linear-gradient(100deg,var(--blue),var(--blue-bright));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.sub{font-size:18px; color:var(--ink-soft); max-width:520px; margin-bottom:34px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px;}
+  .hero-trust{display:flex; gap:28px; flex-wrap:wrap;}
+  .hero-trust .stat b{display:block; font-family:'Space Grotesk'; font-size:22px; color:var(--ink);}
+  .hero-trust .stat span{font-size:12.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ---- Signature hero visual: audit console ---- */
+  .console{
+    position:relative; background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-lg); overflow:visible; animation:consoleIn 1s ease both; animation-delay:.15s;
+  }
+  @keyframes consoleIn{from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);}}
+  .console-bar{display:flex; align-items:center; gap:8px; padding:14px 18px; border-bottom:1px solid var(--line); background:var(--bg-soft); border-radius:var(--radius-lg) var(--radius-lg) 0 0;}
+  .console-bar .dots{display:flex; gap:6px;}
+  .console-bar .dots span{width:9px; height:9px; border-radius:50%; background:#d7dee8;}
+  .console-url{
+    flex:1; margin-left:8px; background:var(--white); border:1px solid var(--line); border-radius:100px;
+    padding:6px 14px; font-size:12px; color:var(--ink-faint); display:flex; align-items:center; gap:7px;
+  }
+  .console-url svg{width:12px;height:12px; stroke:var(--success); flex-shrink:0;}
+  .console-body{padding:26px 22px 30px; position:relative;}
+  .console-body svg.graph{width:100%; height:auto; display:block;}
+  .graph-node circle{fill:var(--white); stroke:var(--blue); stroke-width:2;}
+  .graph-node.root circle{fill:var(--blue); stroke:var(--blue-deep);}
+  .graph-line{stroke:#c9d7f5; stroke-width:2; fill:none;}
+  .graph-pulse{fill:var(--blue-bright); opacity:0.9;}
+
+  .float-chip{
+    position:absolute; background:var(--white); border:1px solid var(--line); border-radius:14px;
+    padding:10px 14px; box-shadow:var(--shadow-md); display:flex; align-items:center; gap:9px;
+    font-size:12.5px; font-weight:600; animation:floaty 5s ease-in-out infinite;
+  }
+  .float-chip svg{width:16px; height:16px; flex-shrink:0;}
+  .float-chip .label{color:var(--ink-faint); font-weight:500; display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em;}
+  .float-chip .value{color:var(--ink); font-family:'Space Grotesk'; font-size:14px;}
+  .chip-cwv{ top:-4%; left:-9%; animation-delay:.2s;}
+  .chip-cwv svg{stroke:var(--success);}
+  .chip-traffic{ bottom:6%; left:-11%; animation-delay:1.1s;}
+  .chip-traffic svg{stroke:var(--blue);}
+  .chip-migrate{ bottom:-6%; right:-6%; animation-delay:.6s;}
+  .chip-migrate svg{stroke:var(--blue);}
+  @keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- About ---------- */
+  .about{background:var(--bg-soft);}
+  .about-grid{display:grid; grid-template-columns:1fr 0.85fr; gap:64px; align-items:start;}
+  .about h2{font-size:clamp(28px,3.4vw,38px); margin-bottom:20px; line-height:1.18;}
+  .about p{color:var(--ink-soft); font-size:16.5px; margin-bottom:16px;}
+  .badge-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .badge-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px;
+    display:flex; flex-direction:column; gap:10px; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .badge-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--blue-pale-2);}
+  .badge-icon{width:38px; height:38px; border-radius:10px; background:var(--blue-pale); display:flex; align-items:center; justify-content:center;}
+  .badge-icon svg{width:19px; height:19px; stroke:var(--blue);}
+  .badge-card b{font-size:14.5px; font-weight:700;}
+  .badge-card span{font-size:12.5px; color:var(--ink-faint);}
+
+  /* ---------- Card grids (services/skills) ---------- */
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .service-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:26px 22px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .service-card:hover{transform:translateY(-5px); box-shadow:var(--shadow-md); border-color:var(--blue-pale-2);}
+  .service-icon{width:44px; height:44px; border-radius:12px; background:var(--blue-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .service-icon svg{width:21px; height:21px; stroke:var(--blue);}
+  .service-card h3{font-size:15.5px; font-weight:700; margin-bottom:6px;}
+  .service-card p{font-size:13px; color:var(--ink-faint); line-height:1.5;}
+
+  /* ---------- Skills ---------- */
+  .skills{background:var(--bg-soft);}
+  .skill-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .skill-item{
+    display:flex; align-items:center; gap:14px; background:var(--white); border:1px solid var(--line);
+    border-radius:var(--radius-md); padding:16px 18px; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .skill-item:hover{transform:translateY(-3px); box-shadow:var(--shadow-sm);}
+  .skill-item .service-icon{width:38px; height:38px; margin-bottom:0; flex-shrink:0;}
+  .skill-item .service-icon svg{width:18px; height:18px;}
+  .skill-item span{font-size:14px; font-weight:600;}
+
+  /* ---------- Tools ---------- */
+  .tool-grid{display:flex; flex-wrap:wrap; gap:12px;}
+  .tool-pill{
+    display:flex; align-items:center; gap:9px; background:var(--white); border:1px solid var(--line);
+    border-radius:100px; padding:10px 18px 10px 12px; font-size:13.5px; font-weight:600; color:var(--ink);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .tool-pill:hover{transform:translateY(-3px); box-shadow:var(--shadow-sm); border-color:var(--blue-pale-2);}
+  .tool-pill .tmark{
+    width:24px; height:24px; border-radius:7px; background:var(--blue-pale); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; font-size:10.5px; font-weight:800; font-family:'Space Grotesk';
+    flex-shrink:0;
+  }
+
+  /* ---------- Projects ---------- */
+  .project-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  .project-card{
+    border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--white);
+    transition:transform .3s ease, box-shadow .3s ease; display:flex; flex-direction:column;
+  }
+  .project-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-lg);}
+  .project-thumb{
+    height:170px; position:relative; overflow:hidden;
+    background:linear-gradient(135deg,var(--blue-pale) 0%, var(--blue-pale-2) 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .project-thumb::before{
+    content:''; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(33,88,224,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(33,88,224,0.08) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  .project-thumb .ph-icon{
+    width:52px; height:52px; border-radius:14px; background:var(--white); box-shadow:var(--shadow-sm);
+    display:flex; align-items:center; justify-content:center; position:relative; z-index:1;
+  }
+  .project-thumb .ph-icon svg{width:24px;height:24px; stroke:var(--blue);}
+  .project-thumb .ph-label{
+    position:absolute; bottom:10px; right:12px; font-size:10.5px; color:var(--blue-deep); background:rgba(255,255,255,0.75);
+    padding:3px 9px; border-radius:100px; font-weight:600; letter-spacing:0.03em; z-index:1;
+  }
+  .project-body{padding:24px 22px 22px; display:flex; flex-direction:column; gap:12px; flex:1;}
+  .project-body h3{font-size:17.5px;}
+  .project-row{display:flex; gap:9px; font-size:13px; color:var(--ink-soft); line-height:1.5;}
+  .project-row b{color:var(--ink); font-weight:700; flex-shrink:0; min-width:74px; font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+  .project-result{
+    display:inline-flex; align-self:flex-start; align-items:center; gap:6px; background:#eafaf3; color:var(--success);
+    font-size:12.5px; font-weight:700; padding:6px 12px; border-radius:100px; margin-top:2px;
+  }
+  .project-result svg{width:13px;height:13px; stroke:var(--success);}
+  .project-body .btn{margin-top:8px; align-self:flex-start;}
+
+  /* ---------- Why ---------- */
+  .why{background:var(--bg-soft);}
+  .why-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:26px 24px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .why-card:hover{transform:translateY(-5px); box-shadow:var(--shadow-md);}
+  .why-check{
+    width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--blue),var(--blue-deep));
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .why-check svg{width:16px;height:16px; stroke:#fff;}
+  .why-card h3{font-size:16px; margin-bottom:7px;}
+  .why-card p{font-size:13.5px; color:var(--ink-faint);}
+
+  /* ---------- Testimonials ---------- */
+  .testi-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg); padding:28px 26px;
+    display:flex; flex-direction:column; gap:16px;
+  }
+  .testi-stars{display:flex; gap:3px;}
+  .testi-stars svg{width:15px; height:15px; fill:#ffb020; stroke:none;}
+  .testi-card p.quote{font-size:14.5px; color:var(--ink-soft); line-height:1.65; font-style:italic;}
+  .testi-person{display:flex; align-items:center; gap:12px; margin-top:auto;}
+  .testi-avatar{width:42px; height:42px; border-radius:50%; background:var(--blue-pale); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk'; font-weight:700; color:var(--blue); font-size:14px;}
+  .testi-person b{display:block; font-size:13.5px;}
+  .testi-person span{font-size:12px; color:var(--ink-faint);}
+
+  /* ---------- Contact ---------- */
+  .contact{position:relative; overflow:hidden;}
+  .contact-panel{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue)); border-radius:28px; padding:64px 56px;
+    color:#fff; position:relative; overflow:hidden;
+  }
+  .contact-panel::after{
+    content:''; position:absolute; inset:0; opacity:.5; pointer-events:none;
+    background-image:radial-gradient(circle at 85% 15%, rgba(255,255,255,0.14), transparent 45%), radial-gradient(circle at 10% 90%, rgba(255,255,255,0.08), transparent 40%);
+  }
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:52px; position:relative; z-index:1;}
+  .contact-panel h2{color:#fff; font-size:clamp(26px,3.2vw,36px); margin-bottom:14px;}
+  .contact-panel > .contact-grid > div:first-child p{color:rgba(255,255,255,0.78); font-size:16px; margin-bottom:28px; max-width:420px;}
+  .contact-links{display:flex; flex-direction:column; gap:14px;}
+  .contact-link{
+    display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);
+    padding:13px 16px; border-radius:14px; font-size:14px; font-weight:600; transition:background .2s ease, transform .2s ease;
+  }
+  .contact-link:hover{background:rgba(255,255,255,0.16); transform:translateX(3px);}
+  .contact-link svg{width:18px;height:18px; stroke:#fff; flex-shrink:0;}
+  .contact-form{background:#fff; border-radius:20px; padding:28px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow-lg);}
+  .contact-form input, .contact-form textarea{
+    width:100%; border:1px solid var(--line); border-radius:12px; padding:13px 15px; font-family:'Inter'; font-size:14px;
+    color:var(--ink); background:var(--bg-soft); transition:border-color .2s ease, background .2s ease;
+  }
+  .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:var(--blue); background:#fff;}
+  .contact-form textarea{resize:vertical; min-height:96px;}
+  .contact-form label{font-size:12.5px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em; margin-bottom:-6px;}
+  .contact-form .btn{justify-content:center; margin-top:4px;}
+  .form-note{font-size:11.5px; color:var(--ink-faint); text-align:center;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:52px 0 34px; border-top:1px solid var(--line);}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; margin-bottom:36px;}
+  .footer-nav{display:flex; gap:26px; flex-wrap:wrap; list-style:none;}
+  .footer-nav a{font-size:13.5px; color:var(--ink-soft); font-weight:500;}
+  .footer-nav a:hover{color:var(--blue);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:26px; border-top:1px solid var(--line);}
+  .footer-bottom p{font-size:12.5px; color:var(--ink-faint);}
+  .socials{display:flex; gap:10px;}
+  .socials a{width:36px; height:36px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; transition:background .2s ease, border-color .2s ease;}
+  .socials a:hover{background:var(--blue-pale); border-color:var(--blue-pale-2);}
+  .socials svg{width:15px; height:15px; stroke:var(--ink-soft);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+    .grid-3{grid-template-columns:repeat(2,1fr);}
+    .skill-grid{grid-template-columns:repeat(2,1fr);}
+    .project-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .badge-grid{grid-template-columns:repeat(2,1fr); max-width:520px;}
+    .hero-grid{grid-template-columns:1fr; gap:64px;}
+    .console{max-width:520px; margin:0 auto;}
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-panel{padding:44px 30px;}
+  }
+  @media (max-width:720px){
+    section{padding:76px 0;}
+    .nav-links{position:fixed; top:68px; left:0; right:0; background:#fff; flex-direction:column; align-items:flex-start;
+      padding:20px 28px 26px; gap:18px; border-bottom:1px solid var(--line); box-shadow:var(--shadow-md);
+      transform:translateY(-130%); opacity:0; transition:transform .3s ease, opacity .3s ease; pointer-events:none;}
+    .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+    .nav-toggle{display:block;}
+    .nav-cta .btn-ghost{display:none;}
+    .grid-4{grid-template-columns:1fr 1fr;}
+    .grid-3{grid-template-columns:1fr;}
+    .skill-grid{grid-template-columns:1fr;}
+    .badge-grid{grid-template-columns:1fr 1fr;}
+    .hero-trust{gap:20px;}
+    .float-chip{position:static; margin-top:12px; animation:none;}
+    .chip-cwv,.chip-traffic,.chip-migrate{position:static;}
+    .footer-top{flex-direction:column;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 20px;}
+    .grid-4{grid-template-columns:1fr 1fr;}
+    .badge-grid{grid-template-columns:1fr 1fr;}
+    .hero-ctas{flex-direction:column; align-items:stretch;}
+    .hero-ctas .btn{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo"><span class="logo-mark">YN</span> Your Name</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#projects" class="btn btn-ghost btn-sm">View Portfolio</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Contact Me</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg id="iconMenu" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Technical SEO Specialist · 6+ Years Agency Experience</div>
+        <h1>Helping Businesses Grow Through <span class="accent">Technical &amp; Local SEO</span></h1>
+        <p class="sub">Technical SEO Specialist with 6+ years of agency experience helping businesses improve search visibility, organic traffic, and website performance.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Portfolio →</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <div class="hero-trust">
+          <div class="stat"><b>6+ Yrs</b><span>Agency Experience</span></div>
+          <div class="stat"><b>60+</b><span>SEO Projects Delivered</span></div>
+          <div class="stat"><b>2,000+</b><span>URLs Migrated Safely</span></div>
+          <div class="stat"><b>AU</b><span>Agency Clients</span></div>
+        </div>
+      </div>
+
+      <div class="console reveal">
+        <div class="console-bar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="console-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+            yoursite.com/technical-audit
+          </div>
+        </div>
+        <div class="console-body">
+          <svg class="graph" viewBox="0 0 360 240" fill="none">
+            <path class="graph-line" d="M180 120 L70 60"/>
+            <path class="graph-line" d="M180 120 L60 130"/>
+            <path class="graph-line" d="M180 120 L90 190"/>
+            <path class="graph-line" d="M180 120 L280 55"/>
+            <path class="graph-line" d="M180 120 L300 120"/>
+            <path class="graph-line" d="M180 120 L270 195"/>
+            <path class="graph-line" d="M280 55 L330 30"/>
+            <path class="graph-line" d="M300 120 L340 150"/>
+            <g class="graph-node root"><circle cx="180" cy="120" r="16"/></g>
+            <g class="graph-node"><circle cx="70" cy="60" r="9"/></g>
+            <g class="graph-node"><circle cx="60" cy="130" r="9"/></g>
+            <g class="graph-node"><circle cx="90" cy="190" r="9"/></g>
+            <g class="graph-node"><circle cx="280" cy="55" r="9"/></g>
+            <g class="graph-node"><circle cx="300" cy="120" r="9"/></g>
+            <g class="graph-node"><circle cx="270" cy="195" r="9"/></g>
+            <g class="graph-node"><circle cx="330" cy="30" r="6"/></g>
+            <g class="graph-node"><circle cx="340" cy="150" r="6"/></g>
+            <circle class="graph-pulse" r="4">
+              <animateMotion dur="3.2s" repeatCount="indefinite" path="M180 120 L280 55 L330 30"/>
+            </circle>
+            <circle class="graph-pulse" r="4" opacity="0.7">
+              <animateMotion dur="2.6s" repeatCount="indefinite" path="M180 120 L60 130"/>
+            </circle>
+          </svg>
+
+          <div class="float-chip chip-cwv">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><span class="label">Core Web Vitals</span><span class="value">All Passed</span></div>
+          </div>
+          <div class="float-chip chip-traffic">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+            <div><span class="label">Organic Traffic</span><span class="value">+148%</span></div>
+          </div>
+          <div class="float-chip chip-migrate">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4"/><path d="M21 7H9a4 4 0 00-4 4"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h12a4 4 0 004-4"/></svg>
+            <div><span class="label">Migration</span><span class="value">2,140 URLs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="eyebrow"><span class="dot"></span> About Me</div>
+        <h2>Six years of agency-side SEO, built on technical precision.</h2>
+        <p>I'm a Technical SEO Specialist who has spent the past 6+ years working inside Australian digital marketing agencies, running SEO campaigns for clients across eCommerce, local businesses, healthcare, retail, and service-based industries. My focus sits where strategy meets implementation — crawl architecture, indexation, site migrations, and the technical foundations that let content and links actually perform.</p>
+        <p>I work remotely as an embedded specialist inside agency teams, handling everything from full technical audits to large-scale replatforming projects, while using AI-assisted workflows to move faster without cutting corners on QA. My clients get someone who can talk strategy with account managers and still get hands-on in Search Console, server logs, and a CMS.</p>
+        <a href="#contact" class="btn btn-primary">Let's Talk About Your Site</a>
+      </div>
+      <div class="badge-grid reveal">
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <b>6+ Years SEO Experience</b>
+          <span>Agency-side, client-facing delivery</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7a2 2 0 012-2h12a2 2 0 012 2v7"/><path d="M9 21V9a2 2 0 012-2h2a2 2 0 012 2v12"/><path d="M4 12H2M22 12h-2"/></svg></div>
+          <b>Technical SEO Expert</b>
+          <span>Audits, crawl &amp; indexation</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <b>Local SEO Specialist</b>
+          <span>Google Business Profile &amp; maps</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.6L18 9l-4.4 1.4L12 15l-1.6-4.6L6 9l4.4-1.4z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></div>
+          <b>AI-Assisted Workflow</b>
+          <span>Faster audits, same rigor</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg></div>
+          <b>Remote Agency Experience</b>
+          <span>Embedded in AU-based teams</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+          <b>Multi-Industry</b>
+          <span>eCommerce, healthcare, retail &amp; more</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> What I Do</div>
+        <h2>Core SEO Services</h2>
+        <p>End-to-end SEO support — from the first crawl to the final ranking report.</p>
+      </div>
+      <div class="grid-4" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="skills">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> Under The Hood</div>
+        <h2>Technical SEO Skills</h2>
+        <p>The details that decide whether a site actually gets crawled, indexed, and ranked.</p>
+      </div>
+      <div class="skill-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= TOOLS ================= -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> Stack</div>
+        <h2>SEO Tools I Work In Daily</h2>
+        <p>Analysis, crawling, reporting, and delivery — the full toolkit.</p>
+      </div>
+      <div class="tool-grid" id="toolsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="about" id="projects" style="background:var(--bg-soft);">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> Selected Work</div>
+        <h2>Featured Projects &amp; Case Studies</h2>
+        <p>A sample of the technical, local, and eCommerce SEO work I've led. Screenshots and full write-ups added per case study.</p>
+      </div>
+      <div class="project-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= WHY ================= -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> Why Work With Me</div>
+        <h2>An SEO partner who gets into the code, not just the dashboard.</h2>
+      </div>
+      <div class="grid-3" id="whyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div class="eyebrow" style="margin-left:auto;margin-right:auto;"><span class="dot"></span> Client Feedback</div>
+        <h2>What Agencies &amp; Clients Say</h2>
+        <p>Placeholder reviews — ready to be replaced with real client testimonials.</p>
+      </div>
+      <div class="grid-3" id="testiGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow" style="background:rgba(255,255,255,0.14); color:#fff;"><span class="dot" style="background:#fff; box-shadow:0 0 0 3px rgba(255,255,255,0.25);"></span> Let's Talk</div>
+            <h2>Let's Grow Your Organic Traffic</h2>
+            <p>Whether you need a full technical audit, ongoing SEO support, or a specialist for your next migration — I'll reply within one business day.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:hello@yourname.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                hello@yourname.com
+              </a>
+              <a class="contact-link" href="#" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13V10M17 10v7"/></svg>
+                linkedin.com/in/yourname
+              </a>
+              <a class="contact-link" href="#">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+                Download Resume (PDF)
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" onsubmit="return false;">
+            <div>
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" placeholder="you@company.com" required />
+            </div>
+            <div>
+              <label for="cf-msg">Project details</label>
+              <textarea id="cf-msg" placeholder="Tell me about your site, timeline, and what you're looking to improve."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message →</button>
+            <p class="form-note">Or email directly — hello@yourname.com</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="#top" class="logo"><span class="logo-mark">YN</span> Your Name</a>
+      <ul class="footer-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Your Name. Technical &amp; Local SEO Specialist.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13V10M17 10v7"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Mobile nav ---------- */
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* ---------- Icon library (hand-built, primitive-based) ---------- */
+const ICONS = {
+  audit:  '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+  local:  '<path d="M12 21s-7-5.4-7-11a7 7 0 0114 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/>',
+  gbp:    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h3M8 17h6"/>',
+  migrate:'<path d="M4 7h11a3 3 0 013 3v0"/><path d="M15 4l3 3-3 3"/><path d="M20 17H9a3 3 0 01-3-3v0"/><path d="M9 20l-3-3 3-3"/>',
+  redirect:'<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h6a4 4 0 014 4v2"/><path d="M16 18H10a4 4 0 01-4-4v-2"/>',
+  keyword:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11h6M11 8v6"/>',
+  onpage: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  schema: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+  linking:'<circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l2 2"/>',
+  cwv:    '<path d="M3 13h3l2.5 6 4-14 2.5 8H21"/>',
+  crawl:  '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"/><path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"/>',
+  strategy:'<path d="M3 21V9M9 21V3M15 21v-7M21 21V6"/>',
+  competitor:'<circle cx="8" cy="8" r="3.5"/><circle cx="17" cy="8" r="3.5"/><path d="M2.5 20c0-3 2.5-5.5 5.5-5.5S13.5 17 13.5 20"/><path d="M12.5 20c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5"/>',
+  content:'<path d="M6 3h9l5 5v13H6z"/><path d="M15 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  gear:   '<circle cx="12" cy="12" r="3.2"/><path d="M12 3v2.4M12 18.6V21M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3 12h2.4M18.6 12H21M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/>',
+  sitemap:'<circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M12 7.2V13M12 13L6.4 17.2M12 13l5.6 4.2"/>',
+  robots: '<rect x="5" y="7" width="14" height="12" rx="2"/><circle cx="9" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.2" fill="currentColor" stroke="none"/><path d="M12 7V4M9 4h6"/>',
+  canonical:'<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12l3 3 5-6"/>',
+  duplicate:'<rect x="4" y="7" width="12" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h8a2 2 0 012 2v11a2 2 0 01-2 2h-2"/>',
+  index:  '<ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5V17c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5"/><path d="M5 11.3c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/>',
+  logs:   '<path d="M5 3h9l5 5v13H5z"/><path d="M14 3v5h5"/><path d="M9 12h6M9 16h6M9 8h2"/>',
+  js:     '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9.5 9v6a1.8 1.8 0 01-3.4.8"/><path d="M14 9v4.5a1.75 1.75 0 003.5 0"/>',
+  check:  '<path d="M20 6L9 17l-5-5"/>',
+  star:   '<polygon points="12 2 15 9 22 9.3 16.5 14 18.3 21 12 17.2 5.7 21 7.5 14 2 9.3 9 9"/>',
+  mail:   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  linkedin:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13V10M17 10v7"/>',
+  download:'<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/>',
+  clock:  '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
+  bulb:   '<path d="M9 18h6M10 22h4"/><path d="M12 2a6 6 0 00-3.5 10.9c.6.4 1 1.1 1 1.9v.2h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0012 2z"/>',
+};
+function icon(name, size=20){
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||ICONS.gear}</svg>`;
+}
+
+/* ---------- Services ---------- */
+const services = [
+  ['audit','Technical SEO Audits','Full-site crawl, indexation, and architecture reviews with a prioritized fix list.'],
+  ['local','Local SEO','Map-pack visibility, citations, and location-based ranking strategy.'],
+  ['gbp','Google Business Profile Optimization','Profile setup, categories, posts, and review strategy that drives calls.'],
+  ['migrate','Website Migration SEO','Zero-traffic-loss migrations across CMS, domain, and platform changes.'],
+  ['redirect','Redirect Mapping','URL-by-URL 301 mapping at scale, validated and QA checked before launch.'],
+  ['keyword','Keyword Research','Search-intent-driven keyword sets mapped to real business pages.'],
+  ['onpage','On-Page SEO','Titles, headings, and content structure aligned to ranking factors.'],
+  ['schema','Schema Markup','Structured data implementation for rich results and entity clarity.'],
+  ['linking','Internal Linking','Link architecture that distributes authority to priority pages.'],
+  ['cwv','Core Web Vitals','LCP, INP, and CLS diagnostics and fixes for real page experience gains.'],
+  ['crawl','Crawl & Index Optimization','Crawl budget, log file review, and indexation cleanup.'],
+  ['strategy','SEO Strategy','Roadmaps that connect technical work to traffic and revenue goals.'],
+  ['competitor','Competitor Analysis','Gap analysis across content, links, and technical positioning.'],
+  ['content','Content Optimization','Refreshing existing content to close relevance and depth gaps.'],
+];
+document.getElementById('servicesGrid').innerHTML = services.map(([ic,title,desc]) => `
+  <div class="service-card reveal">
+    <div class="service-icon">${icon(ic)}</div>
+    <h3>${title}</h3>
+    <p>${desc}</p>
+  </div>`).join('');
+
+/* ---------- Skills ---------- */
+const skills = [
+  ['audit','Site Audits'], ['crawl','Crawl Analysis'], ['sitemap','XML Sitemaps'],
+  ['robots','Robots.txt'], ['canonical','Canonical Tags'], ['redirect','Redirects (301/302)'],
+  ['schema','Structured Data'], ['duplicate','Duplicate Content'], ['index','Indexation Issues'],
+  ['logs','Log File Analysis'], ['cwv','Core Web Vitals'], ['js','JavaScript SEO'],
+];
+document.getElementById('skillsGrid').innerHTML = skills.map(([ic,title]) => `
+  <div class="skill-item reveal">
+    <div class="service-icon">${icon(ic,18)}</div>
+    <span>${title}</span>
+  </div>`).join('');
+
+/* ---------- Tools ---------- */
+const tools = ['GSC','GA4','Ahrefs','SEMrush','Screaming Frog','ChatGPT','Claude AI','GTM','GBP','Looker Studio','Sheets','Excel','ClickUp','HubSpot','Shopify','WordPress','BigCommerce'];
+document.getElementById('toolsGrid').innerHTML = tools.map(t => `
+  <div class="tool-pill reveal"><span class="tmark">${t.split(' ').map(w=>w[0]).join('').slice(0,2)}</span>${t}</div>`).join('');
+
+/* ---------- Projects ---------- */
+const projects = [
+  ['migrate','eCommerce Platform Migration','Large Shopify Plus store migrating from a legacy platform risked losing years of ranking equity.','Full URL inventory, 301 redirect mapping for 2,000+ products, staged crawl testing, and launch-day monitoring.','+0% ranking loss, organic traffic recovered in 3 weeks','Migration'],
+  ['audit','Enterprise Technical SEO Audit','A national retail brand was losing crawl budget to thousands of low-value faceted URLs.','Crawl analysis, log file review, and an indexation cleanup roadmap prioritized by impact.','62% reduction in wasted crawl budget','Technical Audit'],
+  ['local','Multi-Location Local SEO Campaign','A healthcare group with 12 clinics had inconsistent NAP data and weak map-pack visibility.','Citation cleanup, GBP optimization per location, and localized on-page structure.','+91% map-pack impressions in 4 months','Local SEO'],
+  ['cwv','Website Speed & Core Web Vitals Fix','A service-based business site was failing LCP and CLS on mobile, hurting rankings.','Image pipeline fixes, render-blocking script audit, and layout stability improvements.','LCP improved from 4.8s to 1.9s','Performance'],
+  ['gbp','Google Business Profile Optimization','A retail client GBP was under-optimized with low review volume and weak categories.','Category realignment, weekly posts cadence, and a structured review-generation flow.','+3.4x monthly profile calls','Local SEO'],
+  ['redirect','Redirect Mapping at Scale','A domain consolidation project required mapping legacy URLs across 3 merged sites.','Manual + automated URL matching for 2,140 URLs, validated against analytics data.','Zero 404 spikes post-launch','Migration'],
+  ['migrate','Shopify SEO Optimization','A fast-growing eCommerce brand needed technical cleanup ahead of a paid traffic push.','Collection architecture, canonical fixes, schema for products, and internal linking rebuild.','+37% organic revenue quarter-over-quarter','eCommerce'],
+];
+document.getElementById('projectsGrid').innerHTML = projects.map(([ic,title,challenge,solution,result,tag]) => `
+  <div class="project-card reveal">
+    <div class="project-thumb">
+      <div class="ph-icon">${icon(ic,24)}</div>
+      <span class="ph-label">Screenshot placeholder</span>
+    </div>
+    <div class="project-body">
+      <span class="eyebrow" style="margin-bottom:0;">${tag}</span>
+      <h3>${title}</h3>
+      <div class="project-row"><b>Challenge</b><span>${challenge}</span></div>
+      <div class="project-row"><b>Solution</b><span>${solution}</span></div>
+      <div class="project-result">${icon('check',13)} ${result}</div>
+      <a href="#contact" class="btn btn-ghost btn-sm">View Details →</a>
+    </div>
+  </div>`).join('');
+
+/* ---------- Why ---------- */
+const why = [
+  ['Technical SEO First','I fix the foundation — crawlability and indexation — before chasing content or links.'],
+  ['Data-Driven Decisions','Every recommendation is backed by crawl data, analytics, and search console evidence.'],
+  ['AI-Powered Productivity','AI-assisted workflows mean faster audits and reporting, without skipping manual QA.'],
+  ['Agency-Level Experience','Six years inside agency teams means I know how to work within client processes and deadlines.'],
+  ['Clear Communication','Technical findings translated into plain language your team and stakeholders can act on.'],
+  ['Long-Term SEO Strategy','Built for sustainable ranking growth, not short-term wins that fade after reporting season.'],
+];
+document.getElementById('whyGrid').innerHTML = why.map(([title,desc]) => `
+  <div class="why-card reveal">
+    <div class="why-check">${icon('check',15).replace('currentColor','#fff')}</div>
+    <h3>${title}</h3>
+    <p>${desc}</p>
+  </div>`).join('');
+
+/* ---------- Testimonials ---------- */
+const testi = [
+  ['“Placeholder testimonial — replace with a quote about the technical audit and the results it drove.”','Client Name','Marketing Manager, Agency Client'],
+  ['“Placeholder testimonial — replace with a quote about communication and turnaround time.”','Client Name','Founder, eCommerce Brand'],
+  ['“Placeholder testimonial — replace with a quote about the migration going smoothly.”','Client Name','Head of Growth, Agency Partner'],
+];
+document.getElementById('testiGrid').innerHTML = testi.map(([quote,name,role]) => `
+  <div class="testi-card reveal">
+    <div class="testi-stars">${icon('star',15).repeat(0)}${'<svg viewBox="0 0 24 24" width="15" height="15" fill="#ffb020" stroke="none"><polygon points="12 2 15 9 22 9.3 16.5 14 18.3 21 12 17.2 5.7 21 7.5 14 2 9.3 9 9"/></svg>'.repeat(5)}</div>
+    <p class="quote">${quote}</p>
+    <div class="testi-person">
+      <div class="testi-avatar">${name.split(' ').map(w=>w[0]).join('')}</div>
+      <div><b>${name}</b><span>${role}</span></div>
+    </div>
+  </div>`).join('');
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
